@@ -111,8 +111,6 @@ h1 {
     justify-content: center;
     position: relative;
     margin: 0 2rem 0 2rem;
-
-
 }
 
 /* --------------- 3.2 Other --------------------------- */
@@ -238,7 +236,7 @@ section:nth-child(even) {
     display: flex;
     justify-content: space-evenly;
     margin: 4rem 0 4rem 0;
-    gap: 2rem;
+    gap: 4rem;
 }
 
 .section-b .work-article:nth-child(even) {
@@ -311,6 +309,7 @@ section:nth-child(even) {
 /*creates the background text*/
 .section-b .inner-container::after {
     content: "work";
+    display: inline-block;
     color: var(--background-word-color-two--);
     z-index: -1;
     position: absolute;
@@ -321,5 +320,31 @@ section:nth-child(even) {
     font-weight: 500;
 }
 
+.section-c .inner-container {
+    flex-direction: row;
+    flex: 0 0 30rem;
+    margin: 10rem;
+}
 
+.section-c .tile-row {
+    display: flex;
+    flex: 1 1 10rem;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.section-c .tile-column {
+    display: flex;
+    flex: 0 0 24rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+
+.section-c .tile {
+    flex: 1 0 24rem;
+    border: 0.15rem solid var(--emphasized-text-color--);
+    border-radius: 4px;
+    padding: 2rem;
+}
 /* ------------------------------- 5. Media Queries -------------------------------- */
