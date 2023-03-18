@@ -9,6 +9,7 @@
         4.1 Header
         4.2 Introduction
         4.3 sections
+        4.4 form
     5. Media Queries
 ////////////////////////*/
 
@@ -27,6 +28,7 @@
     --background-word-color-one--: #F2F0FF;
     --background-word-color-two--: white;
     --service-tile-text--: #7A7A7A;
+    --form-text-color--: white;
 
 
 }
@@ -38,7 +40,7 @@
 }
 
 html {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 
@@ -163,7 +165,7 @@ nav {
 .bulletpoint-container {
 
     flex-direction: column;
-    flex: 0 1 45rem;
+    flex: 0 1 46rem;
     justify-content: space-between;
     text-align: center;
 }
@@ -323,28 +325,80 @@ section:nth-child(even) {
 .section-c .inner-container {
     flex-direction: row;
     flex: 0 0 30rem;
-    margin: 10rem;
+    margin: 16rem 4rem 10rem 4rem;
 }
 
 .section-c .tile-row {
     display: flex;
-    flex: 1 1 10rem;
+    flex: 0 0 10rem;
     gap: 2rem;
     justify-content: center;
 }
 
 .section-c .tile-column {
     display: flex;
-    flex: 0 0 24rem;
+    flex: 0 0 26rem;
     flex-direction: column;
-    justify-content: space-evenly;
     gap: 2rem;
 }
 
 .section-c .tile {
-    flex: 1 0 24rem;
-    border: 0.15rem solid var(--emphasized-text-color--);
-    border-radius: 4px;
+    flex: 0 0 26rem;
+    border: 2px solid var(--emphasized-text-color--);
     padding: 2rem;
+    background-color: white;
 }
+
+.section-c .icon-wrapper {
+    width: 6rem;
+    margin: 1rem;
+}
+
+.section-c .tile-title {
+    color: var(--emphasized-text-color--);
+    margin: 1rem 1rem 2rem 1rem;
+}
+.section-c .tile-text {
+    color: var(--service-tile-text--);
+    margin: 1rem;
+}
+
+.section-c .inner-container::after {
+    content: "services";
+    display: inline-block;
+    color: var(--background-word-color-one--);
+    z-index: -1;
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20rem;
+    font-weight: 500;
+}
+
+/* --------------- 4.4  form ------------------- */
+.contact-form {
+    background: rgb(72, 69, 228);
+    background: linear-gradient(138deg, rgba(72, 69, 228, 1) 3%, rgba(87, 34, 205, 1) 87%);
+}
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 46rem;
+    color: var(--form-text-color--);
+}
+
+/*.contact-form::before {*/
+/*    position: absolute;*/
+/*    content: "";*/
+/*    display: block;*/
+/*    clip-path: polygon(0 65%, 0 100%, 100% 100%);*/
+/*    width: 100%;*/
+/*    background: rgb(72, 69, 228);*/
+/*    background: linear-gradient(138deg, rgba(72, 69, 228, 1) 3%, rgba(87, 34, 205, 1) 87%);*/
+/*    height: 10rem;;*/
+/*    z-index: 1;*/
+/*    top: -9.9rem;*/
+/*}*/
+
 /* ------------------------------- 5. Media Queries -------------------------------- */
