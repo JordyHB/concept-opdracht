@@ -10,6 +10,7 @@
         4.2 Introduction
         4.3 sections
         4.4 form
+        4.5 footer
     5. Media Queries
 ////////////////////////*/
 
@@ -21,7 +22,7 @@
 :root {
     --header-text-color--: white;
     --default-margin--: 1.75rem;
-    --header-button--color--: #ED4385;
+    --button--color--: #ED4385;
     --emphasized-text-color--: #5722CD;
     --background-uneven-main-sections--: white;
     --background-even-main-sections--: #F3F6F9;
@@ -29,6 +30,8 @@
     --background-word-color-two--: white;
     --service-tile-text--: #7A7A7A;
     --form-text-color--: white;
+    --footer-background-color: black;
+    --footer-text-color: white;
 
 
 }
@@ -42,7 +45,6 @@
 html {
     font-size: 16px;
 }
-
 
 /* ------------------------------- 2. Typography ----------------------------------- */
 
@@ -87,6 +89,15 @@ nav a {
     font-weight: 500;
     font-size: 18px;
 }
+
+.form-wrapper label {
+    font-weight: 500;
+}
+
+footer .inner-container {
+    font-size: 14px;
+}
+
 /* ------------------------------- 3. Layout --------------------------------------- */
 
 h1 {
@@ -109,6 +120,8 @@ h1 {
     z-index: 0;
 }
 
+
+
 /*inner-containers center the content on the row axis*/
 .inner-container {
     display: flex;
@@ -116,7 +129,6 @@ h1 {
     flex-direction: row;
     justify-content: center;
     position: relative;
-    margin: 0 2rem 0 2rem;
 }
 
 /* --------------- 3.2 Other --------------------------- */
@@ -155,7 +167,7 @@ nav {
 }
 
 .header-button {
-    background-color: var(--header-button--color--);
+    background-color: var(--button--color--);
     padding: 1.5rem 2.5rem;
     margin: 0.75rem;
     border: none 50px;
@@ -266,7 +278,7 @@ section:last-of-type:nth-child(even)::after {
 .section-b .work-article {
     display: flex;
     justify-content: space-evenly;
-    margin: 4rem 0 4rem 0;
+    margin: 4rem 2rem 4rem 2rem;
     gap: 4rem;
 }
 
@@ -353,7 +365,7 @@ section:last-of-type:nth-child(even)::after {
 
 .section-c .inner-container {
     flex-direction: row;
-    flex: 0 0 30rem;
+    flex: 0 1 30rem;
     margin: 16rem 4rem 10rem 4rem;
 }
 
@@ -362,6 +374,7 @@ section:last-of-type:nth-child(even)::after {
     flex: 0 0 10rem;
     gap: 2rem;
     justify-content: center;
+    margin: 0 2rem 0 2rem;
 }
 
 .section-c .tile-column {
@@ -414,7 +427,7 @@ section:last-of-type:nth-child(even)::after {
 }
 
 .contact-form .inner-container {
-    margin: 10rem 0 10rem 0;
+    margin: 10rem 0 2rem 0;
 }
 .form-wrapper {
     position: relative;
@@ -433,8 +446,44 @@ section:last-of-type:nth-child(even)::after {
     margin-top: 1.75rem;
 }
 
-.form-wrapper label {
-    font-weight: 500;
+.form-input-fields {
+    display: flex;
+    flex-direction: column;
 }
+
+/*adds margin for spaced between the input fields*/
+.form-input-fields label {
+    margin-top: 2rem;
+}
+
+/*adds padding to the input fields*/
+.form-input-fields input, .form-input-fields textarea {
+    padding: 1rem;
+}
+.send-button-container {
+    align-self: center;
+}
+
+.form-button {
+    background-color: var(--button--color--);
+    padding: 1.25rem 4rem;
+    margin: 1.75rem;
+    border: none 50px;
+    border-radius: 50px;
+    color: white;
+    text-transform: uppercase;
+}
+
+
+/* --------------- 4.4  footer ------------------- */
+
+footer .inner-container {
+    flex: 0 0 4rem;
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
+    justify-content: center;
+    align-items: center;
+}
+
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
