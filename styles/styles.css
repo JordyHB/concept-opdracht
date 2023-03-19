@@ -55,6 +55,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Merriweather', serif;
 }
 
+h2  {
+    font-size: 36px;
+}
+
 h3 {
     font-size: 32px;
 }
@@ -186,6 +190,16 @@ nav {
 
 /* --------------- 4.3  sections ------------------- */
 
+section {
+    position: relative;
+    background-color: var(--background-uneven-main-sections--);
+}
+
+/*responsible for alternating background colours*/
+section:nth-child(even) {
+    background-color: var(--background-even-main-sections--);
+}
+
 /*creates slanted lines for the sections*/
 section::before {
     position: absolute;
@@ -199,16 +213,31 @@ section::before {
     top: -9.9rem;
 }
 
+/*alternates triangle colours*/
 section:nth-child(even)::before {
     background-color: var(--background-even-main-sections--);
 }
 
-section {
-    position: relative;
+/*adds a white triangle to the very last section*/
+section:last-of-type::after {
+    position: absolute;
+    content: "";
+    display: block;
+    clip-path: polygon(0 65%, 0 100%, 100% 100%);
+    transform: rotate(180deg);
+    width: 100%;
+    height: 10rem;;
+    z-index: 40;
+    bottom: -9.9rem;
+}
+
+/*checks wether the last section is odd or even to apply the proper bg colour*/
+section:last-of-type:nth-child(odd)::after {
     background-color: var(--background-uneven-main-sections--);
 }
 
-section:nth-child(even) {
+/*checks wether the last section is odd or even to apply the proper bg colour*/
+section:last-of-type:nth-child(even)::after {
     background-color: var(--background-even-main-sections--);
 }
 
@@ -377,28 +406,35 @@ section:nth-child(even) {
 }
 
 /* --------------- 4.4  form ------------------- */
+
 .contact-form {
+    z-index: 0;
     background: rgb(72, 69, 228);
     background: linear-gradient(138deg, rgba(72, 69, 228, 1) 3%, rgba(87, 34, 205, 1) 87%);
 }
+
+.contact-form .inner-container {
+    margin: 10rem 0 10rem 0;
+}
 .form-wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
     flex: 0 1 46rem;
     color: var(--form-text-color--);
 }
 
-/*.contact-form::before {*/
-/*    position: absolute;*/
-/*    content: "";*/
-/*    display: block;*/
-/*    clip-path: polygon(0 65%, 0 100%, 100% 100%);*/
-/*    width: 100%;*/
-/*    background: rgb(72, 69, 228);*/
-/*    background: linear-gradient(138deg, rgba(72, 69, 228, 1) 3%, rgba(87, 34, 205, 1) 87%);*/
-/*    height: 10rem;;*/
-/*    z-index: 1;*/
-/*    top: -9.9rem;*/
-/*}*/
+.form-title-section {
+    text-align: center;
+    margin: 1.5rem;
+}
+
+.form-title-section .under-title {
+    margin-top: 1.75rem;
+}
+
+.form-wrapper label {
+    font-weight: 500;
+}
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
