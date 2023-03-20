@@ -44,6 +44,7 @@ html {
     font-size: 16px;
 }
 
+
 /* ------------------------------- 2. Typography ----------------------------------- */
 
 body {
@@ -80,8 +81,11 @@ nav a {
     font-size: 18px;
 }
 
+.contact-us-link{
+    font-weight: 500;
+}
 /*styles the link in contact us*/
-.contact-us a {
+.contact-us-link a {
     text-decoration: none;
     color: var(--emphasized-text-color--);
 }
@@ -89,6 +93,15 @@ nav a {
 .section-b p {
     font-weight: 500;
     font-size: 18px;
+}
+
+/*decorates the view project link in the work section*/
+.read-more-link {
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--emphasized-text-color--);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
 }
 
 .form-wrapper label {
@@ -149,16 +162,17 @@ header {
 nav {
     display: flex;
     flex: 1 1 auto;
-    padding: 3rem 4rem;
-    gap: 3rem;
+    padding: 3rem 3rem;
+    gap: 4rem;
     justify-content: flex-end;
     text-decoration: none;
 }
 
+
 .header-content {
-    flex: 0 1 48rem;
+    flex: 0 1 42rem;
     text-align: center;
-    margin: 4rem;
+    margin: 2rem 1rem;
 }
 
 .squiggle-container {
@@ -197,7 +211,7 @@ nav {
     margin: var(--default-margin--);
 }
 
-.contact-us {
+.contact-us-link {
     margin-bottom: 8rem;
 }
 
@@ -260,15 +274,15 @@ section:last-of-type:nth-child(even)::after {
     color: var(--background-word-color-one--);
     z-index: -1;
     position: absolute;
-    top: 40%;
+    top: 24%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 32rem;
+    font-size: 12rem;
     font-weight: 500;
 }
 
 .section-a h4 {
-    margin-bottom: 1.5rem;
+    margin: 0 1rem 1.5rem 1rem;
 }
 
 .section-b .inner-container {
@@ -282,18 +296,13 @@ section:last-of-type:nth-child(even)::after {
 
 .section-b .work-article {
     display: flex;
+    flex-direction: column-reverse;
     justify-content: space-evenly;
-    margin: 4rem 2rem 4rem 2rem;
-    gap: 4rem;
-}
-
-.section-b .work-article:nth-child(even) {
-    flex-direction: row-reverse;
-    flex: 0 1 10rem;
+    margin: 0 2rem 0 2rem;
 }
 
 .section-b .work-text-wrapper {
-    flex: 0 0 24rem;
+    flex: 0 0 auto;
     position: relative;
 }
 
@@ -306,26 +315,14 @@ section:last-of-type:nth-child(even)::after {
     height: 2.5rem;
     background: url("../assets/squiggle_line.svg") no-repeat;
     background-size: contain;
-    top: 12.75rem;
-}
-
-.section-b .work-text-wrapper h3 {
-    margin: 8rem 0;
+    top: 4rem;
 }
 
 .section-b .work-text-wrapper p {
-    margin-bottom: 3.75rem;
+    margin: 4rem 0;
 }
 
-.section-b .work-text-wrapper .read-more-link {
-    text-decoration: none;
-    color: var(--emphasized-text-color--);
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    font-weight: 500;
-}
-
-.section-b .work-text-wrapper .read-more-link-container::after {
+.section-b .read-more-link-container::after {
     content: "";
     display: inline-block;
     width: 2rem;
@@ -335,14 +332,15 @@ section:last-of-type:nth-child(even)::after {
     transition: width linear 0.3s;
 }
 
-.section-b .work-text-wrapper .read-more-link-container:hover::after {
+.section-b .read-more-link-container:hover::after {
     width: 8rem;
     transition: all linear 0.3s;
 }
 
 .section-b .work-image-wrapper {
-    flex: 0 1 48rem;
+    flex: 0 1 auto;
     transform: rotate(1deg);
+    margin: 3rem 0;
 }
 
 .section-b .work-article:nth-child(even) .work-image-wrapper {
@@ -361,38 +359,39 @@ section:last-of-type:nth-child(even)::after {
     color: var(--background-word-color-two--);
     z-index: -1;
     position: absolute;
-    top: 3.5%;
+    top: 1%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 32rem;
+    font-size: 12rem;
     font-weight: 500;
 }
 
 .section-c .inner-container {
     flex-direction: row;
     flex: 0 1 30rem;
-    margin: 16rem 4rem 10rem 4rem;
+    margin: 12rem 4rem 10rem 4rem;
 }
 
 .section-c .tile-row {
     display: flex;
-    flex: 0 0 10rem;
-    gap: 2rem;
+    flex-direction: column;
+    flex: 0 0 24rem;
+    gap: 1rem;
     justify-content: center;
     margin: 0 2rem 0 2rem;
 }
 
 .section-c .tile-column {
     display: flex;
-    flex: 0 0 26rem;
+    flex: 0 0 24rem;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .section-c .tile {
-    flex: 0 0 26rem;
+    flex: 0 0 24rem;
     border: 2px solid var(--emphasized-text-color--);
-    padding: 2rem;
+    padding: 1rem;
     background-color: white;
 }
 
@@ -416,10 +415,10 @@ section:last-of-type:nth-child(even)::after {
     color: var(--background-word-color-one--);
     z-index: -1;
     position: absolute;
-    top: -10%;
+    top: -1%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 20rem;
+    font-size: 7rem;
     font-weight: 500;
 }
 
@@ -440,6 +439,7 @@ section:last-of-type:nth-child(even)::after {
     flex-direction: column;
     flex: 0 1 46rem;
     color: var(--form-text-color--);
+    margin: 2rem;
 }
 
 .form-title-section {
@@ -494,5 +494,74 @@ footer .inner-container {
 /* ------------------------------- 5. Media Queries -------------------------------- */
 
 @media screen and (min-width: 992px) {
-    
+
+    .header-content {
+        flex: 0 1 52rem;
+        margin: 2rem;
+    }
+
+    /*realigns background text*/
+    .section-a .inner-container::after {
+        font-size: 32rem;
+        top: 40%;
+        left: 50%;
+    }
+
+    /*changes from single file to row on wider screens*/
+    .section-b .work-article {
+        flex-direction: row;
+        gap: 4rem;
+    }
+
+    /*flips the image around for the even articles*/
+    .section-b .work-article:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    /*realigns background text*/
+    .section-b .inner-container::after {
+        font-size: 32rem;
+        top: 3.5%;
+        left: 50%;
+    }
+
+    /*flexbasis for min width*/
+    .section-b .work-text-wrapper {
+        flex: 0 0 24rem;
+    }
+
+    /*spacing*/
+    .section-b .work-text-wrapper h3 {
+        margin: 8rem 0;
+    }
+
+    /*flex basis for a min width*/
+    .section-b .work-image-wrapper {
+        flex: 0 1 48rem;
+    }
+
+    /*correctly realigns the squiggly line*/
+    .section-b .work-text-wrapper::before {
+        top: 12.5rem;
+    }
+
+    /*changes from single line to rectangle on wide screens*/
+    .section-c .tile-row {
+        flex-direction: row;
+        flex: 0 0 10rem;
+        gap: 2rem;
+    }
+
+    /*realigns background text*/
+    .section-c .inner-container::after {
+        font-size: 20rem;
+        top: -10%;
+        left: 50%;
+    }
+
+    /*adds some extra margin on wide screens*/
+    .section-c .inner-container {
+        margin: 16rem 4rem 10rem 4rem;
+    }
+
 }
