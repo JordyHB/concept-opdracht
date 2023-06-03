@@ -1,0 +1,567 @@
+/*////////////////////////
+    Table of Contents
+    1. Global Styles
+    2. Typography
+    3. Layout
+        3.1 Reusables
+        3.2 Other
+    4. Areas
+        4.1 Header
+        4.2 Introduction
+        4.3 sections
+        4.4 form
+        4.5 footer
+    5. Media Queries
+////////////////////////*/
+
+/* ------------------------------- 1. Global Styles -------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+:root {
+    --header-text-color--: white;
+    --default-margin--: 1.75rem;
+    --button--color--: #ED4385;
+    --emphasized-text-color--: #5722CD;
+    --background-uneven-main-sections--: white;
+    --background-even-main-sections--: #F3F6F9;
+    --background-word-color-one--: #F2F0FF;
+    --background-word-color-two--: white;
+    --service-tile-text--: #7A7A7A;
+    --form-text-color--: white;
+    --footer-background-color--: black;
+    --footer-text-color--: white;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+
+/* ------------------------------- 2. Typography ----------------------------------- */
+
+body {
+    font-family: 'Roboto', sans-serif;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+}
+
+h1 {
+   font-size: 42px;
+}
+h2  {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 32px;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+/*styles nav links*/
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.motto {
+    font-size: 18px;
+}
+
+.contact-us-link{
+    font-weight: 500;
+}
+/*styles the link in contact us*/
+.contact-us-link a {
+    text-decoration: none;
+    color: var(--emphasized-text-color--);
+}
+
+.section-b p {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+/*decorates the view project link in the work section*/
+.read-more-link {
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--emphasized-text-color--);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.form-wrapper label {
+    font-weight: 500;
+}
+
+footer .inner-container {
+    font-size: 14px;
+}
+
+/* ------------------------------- 3. Layout --------------------------------------- */
+
+h1 {
+    margin: var(--default-margin--);
+}
+
+.motto {
+    margin: var(--default-margin--);
+}
+
+/* --------------- 3.1 Reusables ----------------------- */
+
+/*outer-containers center the content on the column axis*/
+.outer-container {
+    display: flex;
+    flex-direction: column;
+    /*shorthand for flex-shrink, flex-grow and flex-basis*/
+    flex: 1 1 auto;
+    justify-content: center;
+    z-index: 0;
+}
+
+
+
+/*inner-containers center the content on the row axis*/
+.inner-container {
+    display: flex;
+    flex: 1 1 8rem;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+}
+
+/* --------------- 3.2 Other --------------------------- */
+
+/* ------------------------------- 4. Areas ---------------------------------------- */
+
+/* --------------- 4.1 Header ------------------------- */
+
+header {
+    display: flex;
+    flex-direction: column;
+    background: rgb(72, 69, 228);
+    background: linear-gradient(156deg, rgba(72,69,228,1) 30%, rgba(87,34,205,1) 70%);
+    color: var(--header-text-color--);
+}
+
+nav {
+    display: flex;
+    flex: 1 1 auto;
+    padding: 3rem 3rem;
+    gap: 4rem;
+    justify-content: flex-end;
+    text-decoration: none;
+}
+
+
+.header-content {
+    flex: 0 1 42rem;
+    text-align: center;
+    margin: 2rem 1rem;
+}
+
+.squiggle-container {
+    flex: 0 1 4rem;
+    /*shorthand for background*/
+    background: url(../assets/squiggle_line_stripe.svg) bottom / contain no-repeat;
+}
+
+.header-button {
+    background-color: var(--button--color--);
+    padding: 1.5rem 2.5rem;
+    margin: 0.75rem;
+    border: none 50px;
+    border-radius: 50px;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* --------------- 4.2 Introduction ------------------- */
+
+.bulletpoint-container {
+
+    flex-direction: column;
+    flex: 0 1 46rem;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.bulletpoints {
+    color: var(--emphasized-text-color--);
+    margin: 8rem 0 3.5rem 0;
+}
+
+/*styles the individual bulletpoints*/
+.bulletpoints h3 {
+    margin: var(--default-margin--);
+}
+
+.contact-us-link {
+    margin-bottom: 8rem;
+}
+
+/* --------------- 4.3  sections ------------------- */
+
+section {
+    position: relative;
+    background-color: var(--background-uneven-main-sections--);
+}
+
+/*responsible for alternating background colours*/
+section:nth-child(even) {
+    background-color: var(--background-even-main-sections--);
+}
+
+/*creates slanted lines for the sections*/
+section::before {
+    position: absolute;
+    content: "";
+    display: block;
+    clip-path: polygon(0 65%, 0 100%, 100% 100%);
+    width: 100%;
+    height: 10rem;
+    background-color: var(--background-uneven-main-sections--);
+    z-index: 1;
+    top: -9.9rem;
+}
+
+/*alternates triangle colours*/
+section:nth-child(even)::before {
+    background-color: var(--background-even-main-sections--);
+}
+
+/*adds a white triangle to the very last section*/
+section:last-of-type::after {
+    position: absolute;
+    content: "";
+    display: block;
+    clip-path: polygon(0 65%, 0 100%, 100% 100%);
+    transform: rotate(180deg);
+    width: 100%;
+    height: 10rem;;
+    z-index: 40;
+    bottom: -9.9rem;
+}
+
+/*checks wether the last section is odd or even to apply the proper bg colour*/
+section:last-of-type:nth-child(odd)::after {
+    background-color: var(--background-uneven-main-sections--);
+}
+
+/*checks wether the last section is odd or even to apply the proper bg colour*/
+section:last-of-type:nth-child(even)::after {
+    background-color: var(--background-even-main-sections--);
+}
+
+/*creates the background text*/
+.section-a .inner-container::after {
+    content: "hello";
+    color: var(--background-word-color-one--);
+    z-index: -1;
+    position: absolute;
+    top: 24%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12rem;
+    font-weight: 500;
+}
+
+.section-a h4 {
+    margin: 0 1rem 1.5rem 1rem;
+}
+
+.section-b .inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 0 0 30rem;
+    margin: 10rem 0 10rem 0;
+}
+
+.section-b .work-article {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    margin: 0 2rem 0 2rem;
+}
+
+.section-b .work-text-wrapper {
+    flex: 0 0 auto;
+    position: relative;
+}
+
+/*pseudoclass for purple squiggle*/
+.section-b .work-text-wrapper::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 5rem;
+    height: 2.5rem;
+    background: url("../assets/squiggle_line.svg") no-repeat;
+    background-size: contain;
+    top: 4rem;
+}
+
+.section-b .work-text-wrapper p {
+    margin: 4rem 0;
+}
+
+.section-b .read-more-link-container::after {
+    content: "";
+    display: inline-block;
+    width: 2rem;
+    height: 0.2rem;
+    background-color: var(--emphasized-text-color--);
+    vertical-align: middle;
+    transition: width linear 0.3s;
+}
+
+.section-b .read-more-link-container:hover::after {
+    width: 8rem;
+    transition: all linear 0.3s;
+}
+
+.section-b .work-image-wrapper {
+    flex: 0 1 auto;
+    transform: rotate(1deg);
+    margin: 3rem 0;
+}
+
+.section-b .work-article:nth-child(even) .work-image-wrapper {
+    transform: rotate(-1deg);
+}
+
+.section-b .work-image-wrapper img {
+    width: 100%;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2)
+}
+
+/*creates the background text*/
+.section-b .inner-container::after {
+    content: "work";
+    display: inline-block;
+    color: var(--background-word-color-two--);
+    z-index: -1;
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12rem;
+    font-weight: 500;
+}
+
+.section-c .inner-container {
+    flex-direction: row;
+    flex: 0 1 30rem;
+    margin: 12rem 4rem 10rem 4rem;
+}
+
+.section-c .tile-row {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 24rem;
+    gap: 1rem;
+    justify-content: center;
+    margin: 0 2rem 0 2rem;
+}
+
+.section-c .tile-column {
+    display: flex;
+    flex: 0 0 24rem;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.section-c .tile {
+    flex: 0 0 24rem;
+    border: 2px solid var(--emphasized-text-color--);
+    padding: 1rem;
+    background-color: white;
+}
+
+.section-c .icon-wrapper {
+    width: 6rem;
+    margin: 1rem;
+}
+
+.section-c .tile-title {
+    color: var(--emphasized-text-color--);
+    margin: 1rem 1rem 2rem 1rem;
+}
+.section-c .tile-text {
+    color: var(--service-tile-text--);
+    margin: 1rem;
+}
+
+.section-c .inner-container::after {
+    content: "services";
+    display: inline-block;
+    color: var(--background-word-color-one--);
+    z-index: -1;
+    position: absolute;
+    top: -1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 7rem;
+    font-weight: 500;
+}
+
+/* --------------- 4.4  form ------------------- */
+
+.contact-form {
+    z-index: 0;
+    background: rgb(72, 69, 228);
+    background: linear-gradient(156deg, rgba(72,69,228,1) 30%, rgba(87,34,205,1) 70%);
+}
+
+.contact-form .inner-container {
+    margin: 10rem 0 2rem 0;
+}
+.form-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 46rem;
+    color: var(--form-text-color--);
+    margin: 2rem;
+}
+
+.form-title-section {
+    text-align: center;
+    margin: 1.5rem;
+}
+
+.form-title-section .under-title {
+    margin-top: 1.75rem;
+}
+
+.form-input-fields {
+    display: flex;
+    flex-direction: column;
+}
+
+/*adds margin for spaced between the input fields*/
+.form-input-fields label {
+    margin-top: 2rem;
+}
+
+/*adds padding to the input fields*/
+.form-input-fields input, .form-input-fields textarea {
+    padding: 1rem;
+}
+.send-button-container {
+    align-self: center;
+}
+
+.form-button {
+    background-color: var(--button--color--);
+    padding: 1.25rem 4rem;
+    margin: 1.75rem;
+    border: none 50px;
+    border-radius: 50px;
+    color: white;
+    text-transform: uppercase;
+}
+
+
+/* --------------- 4.4  footer ------------------- */
+
+footer .inner-container {
+    flex: 0 0 4rem;
+    background-color: var(--footer-background-color--);
+    color: var(--footer-text-color--);
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ------------------------------- 5. Media Queries -------------------------------- */
+
+@media screen and (min-width: 992px) {
+
+    .header-content {
+        flex: 0 1 52rem;
+        margin: 2rem;
+    }
+
+    /*realigns background text*/
+    .section-a .inner-container::after {
+        font-size: 32rem;
+        top: 40%;
+        left: 50%;
+    }
+
+    /*changes from single file to row on wider screens*/
+    .section-b .work-article {
+        flex-direction: row;
+        gap: 4rem;
+    }
+
+    /*flips the image around for the even articles*/
+    .section-b .work-article:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    /*realigns background text*/
+    .section-b .inner-container::after {
+        font-size: 32rem;
+        top: 3.5%;
+        left: 50%;
+    }
+
+    /*flexbasis for min width*/
+    .section-b .work-text-wrapper {
+        flex: 0 0 24rem;
+    }
+
+    /*spacing*/
+    .section-b .work-text-wrapper h3 {
+        margin: 8rem 0;
+    }
+
+    /*flex basis for a min width*/
+    .section-b .work-image-wrapper {
+        flex: 0 1 48rem;
+    }
+
+    /*correctly realigns the squiggly line*/
+    .section-b .work-text-wrapper::before {
+        top: 12.5rem;
+    }
+
+    /*changes from single line to rectangle on wide screens*/
+    .section-c .tile-row {
+        flex-direction: row;
+        flex: 0 0 10rem;
+        gap: 2rem;
+    }
+
+    /*realigns background text*/
+    .section-c .inner-container::after {
+        font-size: 20rem;
+        top: -10%;
+        left: 50%;
+    }
+
+    /*adds some extra margin on wide screens*/
+    .section-c .inner-container {
+        margin: 16rem 4rem 10rem 4rem;
+    }
+
+}
